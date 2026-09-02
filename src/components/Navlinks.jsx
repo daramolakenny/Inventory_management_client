@@ -10,29 +10,6 @@ const Navlinks = () => {
 
   return (
     <div className='w-full'>
-        {/* <div className='mx-16 flex'>
-
-            <div className=''>MostyStore</div>
-
-            
-                <ul className={`lg:flex lg:flex-row space-x-6 cursor-pointer ${openMenu ? 'flex flex-col absolute bg-blue-100 mt-8 px-10 text-gray-800 z-100' : 'hidden'} `}>
-                {nav.map((item, id) => (
-                    <li 
-                        key={id}
-                        className='space-x-2 py-2 hover:bg-blue-200 rounded-sm p-2 mb-2'
-                    >
-                        {item.name}
-                    </li>
-                ))}
-                </ul>
-
-            
-            
-            <div 
-                onClick={handleToggleMenu}
-                className='lg:hidden cursor-pointer'
-            >{openMenu ? '✕' : '☰'}</div>
-        </div> */}
         {/* Navbar */}
         <div className="relative z-50 flex w-full items-center justify-between rounded-xl bg-white/95 px-16 py-4 shadow-md backdrop-blur-sm">
 
@@ -49,20 +26,20 @@ const Navlinks = () => {
 
         {/* Navigation */}
         <div>
-            <ul className={`lg:flex lg:flex-row space-x-6 cursor-pointer ${openMenu ? 'flex flex-col absolute bg-blue-100 mt-8 px-10 text-gray-800 z-100' : 'hidden'} `}>
+            <ul className={`lg:flex lg:flex-row space-x-6 cursor-pointer text-blue-800 ${openMenu ? 'flex flex-col absolute bg-blue-50 shadow-2xl rounded-lg transition hover:-translate-y-0.5 hover:text-blue-800 mt-12 px-10 text-blue-600 z-100' : 'hidden'} `}>
                 {nav.map((item, id) => (
                     <li 
                         key={id}
                         className='space-x-2 py-2 hover:bg-blue-200 rounded-sm p-2 mb-2'
                     >
-                        {item.name}
+                        <a href={item.href}>{item.name}</a>
                     </li>
                 ))}
             </ul>            
             
             <div 
                 onClick={handleToggleMenu}
-                className='lg:hidden cursor-pointer'
+                className='lg:hidden cursor-pointer text-blue-800 ml-16'
             >{openMenu ? '✕' : '☰'}</div>
         </div>
 
